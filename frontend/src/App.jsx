@@ -90,9 +90,9 @@ function App() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-900 text-gray-100 font-sans">
+    <div className="flex flex-col md:flex-row h-screen bg-gray-900 text-gray-100 font-sans">
       {/* Left Panel - Code Editor */}
-      <div className="flex-1 border-r border-gray-700 flex flex-col">
+      <div className="flex-1 border-b md:border-b-0 md:border-r border-gray-700 flex flex-col min-h-[50vh] md:min-h-0">
         <div className="bg-gray-800 p-3 border-b border-gray-700 font-mono text-sm shadow-sm flex items-center justify-between">
           <span className="text-gray-300">current_code.cpp</span>
           <span className="text-xs text-blue-400 bg-blue-900/30 px-2 py-1 rounded">C++ Engine</span>
@@ -107,7 +107,7 @@ function App() {
       </div>
 
       {/* Right Panel - Chat Interface */}
-      <div className="w-[500px] flex flex-col bg-gray-800">
+      <div className="w-full md:w-[500px] flex flex-col bg-gray-800 flex-1 md:flex-none">
         <div className="bg-gray-800 p-4 border-b border-gray-700 shadow-sm flex items-center justify-between">
           <h2 className="font-semibold text-lg bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
             AlgoMentor AI

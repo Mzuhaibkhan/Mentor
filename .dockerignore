@@ -1,0 +1,11 @@
+node_modules/
+.venv/
+dist/
+__pycache__/
+*.pyc
+.env
+.git/
+.gitignore
+setup.ps1
+Dockerfile
+walkthrough.md
