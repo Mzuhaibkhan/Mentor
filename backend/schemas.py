@@ -8,3 +8,4 @@ class ChatMessage(BaseModel):
 class ChatPayload(BaseModel):
     history: List[ChatMessage]
     current_code: Optional[str] = None
+    model: str = "gemini-3.5-flash"
