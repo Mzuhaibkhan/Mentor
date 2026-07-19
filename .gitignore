@@ -1,7 +1,17 @@
+# Ignore env files in all directories globally
+.env
+**/.env
+backend/.env
+frontend/.env
+
+# Dependencies
 node_modules/
 .venv/
-dist/
 __pycache__/
 *.pyc
-.env
+
+# Builds
+dist/
+
+# System
 .DS_Store
