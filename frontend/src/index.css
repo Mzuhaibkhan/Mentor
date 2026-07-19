@@ -4,7 +4,7 @@
    ========================================= */
 
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ── Reset ─────────────────────────────── */
 *, *::before, *::after {
@@ -732,5 +732,200 @@ tr:hover .md-td { background: rgba(255,255,255,0.02); }
   right: 10px;
   color: #a78bfa;
   pointer-events: none;
+}
+
+/* =========================================
+   AlgoMentor AI — Landing Page (Soren Inspired)
+   ========================================= */
+
+.landing-container {
+  font-family: "Urbanist", var(--font-sans);
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: hsl(0 0% 7.5%);
+  color: hsl(0 0% 90%);
+}
+
+.spline-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2em;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.landing-hero {
+  margin-top: 15vh;
+  text-align: center;
+  margin-bottom: 5em;
+  padding: 2em;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(0 0% 15%);
+  animation: fade-in 1s ease-out forwards;
+}
+
+.landing-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+  background: linear-gradient(135deg, #f1f5f9, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  color: hsl(0 0% 60%);
+  margin-bottom: 2em;
+  font-weight: 500;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1em 2.5em;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: hsl(0 0% 90%);
+  background-color: hsl(0 0% 12.5%);
+  border: 1px solid hsl(0 0% 15%);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.cta-button:hover {
+  background-color: hsl(0 0% 15%);
+  border-color: rgba(96, 165, 250, 0.5);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Features Section */
+.features-section {
+  width: 100%;
+  max-width: 1100px;
+  margin: 5em auto;
+  padding: 2em 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2em;
+  color: hsl(0 0% 90%);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5em;
+}
+
+.feature-card {
+  background: hsl(0 0% 10%);
+  border: 1px solid hsl(0 0% 15%);
+  border-radius: 16px;
+  padding: 2em;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(167, 139, 250, 0.4);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #a78bfa;
+  margin-bottom: 1em;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.8em;
+  color: hsl(0 0% 90%);
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: hsl(0 0% 60%);
+}
+
+/* Footer */
+.landing-footer {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 5em;
+  padding: 3em 0;
+  border-top: 1px solid hsl(0 0% 15%);
+  text-align: center;
+}
+
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: hsl(0 0% 60%);
+  margin-bottom: 2em;
+}
+
+.contributors-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.contributor-card {
+  background: hsl(0 0% 10%);
+  border: 1px solid hsl(0 0% 15%);
+  border-radius: 12px;
+  padding: 1.5em 2.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.contributor-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: hsl(0 0% 90%);
+}
+
+.social-links {
+  display: flex;
+  gap: 1em;
+}
+
+.social-links a {
+  color: hsl(0 0% 60%);
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #60a5fa;
 }
 

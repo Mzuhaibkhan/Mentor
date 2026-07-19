@@ -3,6 +3,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LandingPage from './pages/LandingPage';
 
 const WelcomeMessage = () => (
   <div className="welcome-card">
@@ -98,7 +100,7 @@ const MarkdownMessage = ({ content }) => (
   </ReactMarkdown>
 );
 
-function App() {
+function ChatApp() {
   const [code, setCode] = useState('');
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState([]);
@@ -323,6 +325,17 @@ function App() {
         </div>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/app" element={<ChatApp />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
