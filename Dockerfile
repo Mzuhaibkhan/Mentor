@@ -1,14 +1,22 @@
 # Stage 1: Build the React frontend
 FROM node:20-alpine AS build-stage
 WORKDIR /app/frontend
+
+# Copy package files and install precisely matching versions
 COPY frontend/package*.json ./
-RUN npm install
+RUN npm ci
+
+# Copy source and build
 COPY frontend/ ./
+ENV NODE_ENV=production
 RUN npm run build
 
 # Stage 2: Setup Python FastAPI backend
 FROM python:3.11-slim
 WORKDIR /app
+
+# Create a non-root user for security
+RUN adduser --disabled-password --gecos '' appuser
 
 # Install python dependencies
 COPY backend/requirements.txt ./
@@ -19,6 +27,10 @@ COPY backend/ ./backend/
 
 # Copy the built frontend artifacts into the /static directory
 COPY --from=build-stage /app/frontend/dist /static
+
+# Change ownership of the app directory to the non-root user
+RUN chown -R appuser:appuser /app
+USER appuser
 
 # Expose the application port
 EXPOSE 8000
